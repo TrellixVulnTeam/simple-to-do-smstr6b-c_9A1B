@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+<div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form class="form-horizontal" method="POST" action="">
+                {{form.hidden_tag()}}
+                <div class="form-group">
+                    {{form.kd_buku.label(class="control-label col-sm-4")}}
+                    <div class="col-sm-8">
+                        {{form.kd_buku(class="form-control", value=buku.kd_buku, readonly=readonly)}}
+                    </div>
+                </div>
+                <div class="form-group">
+                        {{form.judul.label(class="control-label col-sm-4")}}
+                        <div class="col-sm-8">
+                            {{form.judul(class="form-control", value=buku.judul)}}
+                        </div>
+                </div>
+                <div class="form-group">
+                        {{form.pengarang.label(class="control-label col-sm-4")}}
+                        <div class="col-sm-8">
+                            {{form.pengarang(class="form-control", value=buku.pengarang)}}
+                        </div>
+                </div>
+                <div class="form-group">
+                        {{form.penerbit.label(class="control-label col-sm-4")}}
+                        <div class="col-sm-8">
+                            {{form.penerbit(class="form-control", value=buku.penerbit)}}
+                        </div>
+                </div>
+                <div class="form-group">
+                        {{form.tahun_terbit.label(class="control-label col-sm-4")}}
+                        <div class="col-sm-8">
+                            {{form.tahun_terbit(class="form-control", value=buku.tahun_terbit)}}
+                        </div>
+                </div>
+                <div class="form-group">
+                    {{form.submit(class="col-sm-offset-4 btn btn-success")}}
+                </div>
+            </form>
+        </div>
+    </div>
+{%endblock%}

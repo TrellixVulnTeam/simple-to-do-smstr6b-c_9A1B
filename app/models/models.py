@@ -15,6 +15,16 @@ class Buku(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
+    
+    def getAll(self):
+        return Buku.query.all()
+    
+    def getOne(self, id):
+        return Buku.query.filter_by(id=id).first()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
     def __repr__(self):
         return '<id:{}>'.format(self.id)
